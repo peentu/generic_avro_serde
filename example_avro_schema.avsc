@@ -1,0 +1,33 @@
+{
+    "namespace": "org.kpn.greenbox.ri",
+    "name": "CustomerTransaction",
+    "type": "record",
+    "fields": [
+	{
+		"name": "transaction",
+		"type": {
+			"name": "TransactionType",
+			"type": "enum",
+			"symbols": ["created", "updated", "cancelled"]
+		}
+	},	
+	{ "name": "customerId",  "type": "string"},
+	{ "name": "postalCode", "type": "string" },
+      	{ "name": "houseNumber", "type": "int" },
+      	{ "name": "timestamp", "type": "long" },
+	{ "name": "products",
+		"type": {
+			"type": "array",
+			"items": {
+				"name": "Product",
+				"type": "record",
+			    	"fields": [
+			    		{ "name": "productId", "type": "string" },
+			      		{ "name": "name", "type": "string" },
+					{"name": "number", "type": "int" }
+			    	]
+			}
+		}
+	}
+    ]
+}
